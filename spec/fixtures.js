@@ -1,13 +1,14 @@
-var FILL_ME_IN = 'Fill me in.';
+ var FILL_ME_IN = 'Fill me in.';
 
 var validStrings, invalidStrings, // used for stringifyJSON and parseJSON specs
   weirdObjects; // used for stringifyJSON spec
 
 var stringifiableObjects = [
+  'cat',
   9,
-  null,
   true,
   false,
+  null,
   'Hello world',
   [],
   [8],
@@ -16,8 +17,8 @@ var stringifiableObjects = [
   [1, 0, -1, -0.3, 0.3, 1343.32, 3345, 0.00011999999999999999],
   [8, [[], 3, 4]],
   [[[['foo']]]],
-  {},
   {'a': 'apple'},
+  {},
   {'foo': true, 'bar': false, 'baz': null},
   {'boolean, true': true, 'boolean, false': false, 'null': null },
   // basic nesting
@@ -39,6 +40,15 @@ unstringifiableValues = [
 
 parseableStrings = [
   // basic stuff
+  '"cat"',
+  '9',
+  'false',
+  'true',
+  'null',
+  'undefined',
+  '["cat"]',
+  '["cat", "dog"]',
+  '["cat", "dog", 6]',
   '[]',
   '{"foo": ""}',
   '{}',
